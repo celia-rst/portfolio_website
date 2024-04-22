@@ -8,49 +8,149 @@ header {
     background-color: #333;
     color: #fff;
     padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 .logo {
-    font-size: 24px;
+    font-size: 50px;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 10px;
 }
 
-nav ul {
-    list-style-type: none;
-    margin: 0;
+/*-----------------------------*/
+/* Menu grand écran */
+
+.main-menu {
+    list-style: none;
     padding: 0;
+    margin: 0;
+    text-align: center;
+  }
+  
+.main-menu li {
+    display: inline-block;
+    margin-right: 20px; /* Marge à droite pour l'espacement entre les éléments */
 }
 
-nav ul li {
-    display: inline;
-    margin-right: 20px;
+.main-menu li:last-child {
+    margin-right: 0; /* Supprime la marge à droite du dernier élément */
 }
 
-nav ul li a {
-    color: #fff;
+/* Style commun pour les boutons et les liens */
+.main-menu li button,
+.main-menu li a {
     text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+  
+/* Style au survol */
+.main-menu li button:hover,
+.main-menu li a:hover {
+    color: #666;
 }
 
-.social-icons {
-    display: flex;
-    justify-content: center;
+.social-media {
+    display: flex; /* Utiliser Flexbox pour aligner les éléments */
+    justify-content: center; /* Aligner horizontalement au centre */
+    align-items: center; /* Aligner verticalement au centre */
+    margin-top: 10px;
+    .icon {
+        width: 20px;
+        height: 20px;
+        padding: 10px;
+    }
 }
 
-.social-icons .icon {
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
+.dropdown-menu {
+    display: none; /* Masquer le menu déroulant par défaut */
+  }
+
+/*-----------------------------*/
+/* Menu responsive */
+
+@media screen and (max-width: 768px) {
+    .main-menu {
+      display: none; /* Masquer le menu principal */
+    }
+    
+    .dropdown-menu {
+      display: block;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      text-align: center;
+    }
+
+    .dropdown-menu li button,
+    .dropdown-menu li a {
+      text-decoration: none;
+      font-size: 24px;
+      font-weight: bold;
+      color: #ffffff;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+    }
+
+      /* Style au survol */
+    .dropdown-menu li button:hover,
+    .dropdown-menu li a:hover {
+        color: #666;
+    }
+  }
+
+/*-----------------------------*/
+
+/* Définit les styles pour le conteneur de la vidéo sur la page d'accueil */
+.homepage-video-container {
+    max-width: 1000px; /* La vidéo ne dépassera pas la largeur de son conteneur */
+    margin: 0 auto; /* Centre le conteneur horizontalement sur la page */
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-gap: 20px;
+/* Définit les styles pour le conteneur de la vidéo */
+.homepage-video {
+    position: relative; /* Position relative pour permettre le positionnement absolu de la vidéo */
+    overflow: hidden; /* Cache tout contenu dépassant les limites du conteneur */
+    height: 0; /* Initialise la hauteur à 0 pour calculer la hauteur du conteneur basée sur le ratio */
+    padding-bottom: 56.25%; /* Ratio hauteur/largeur de 16:9 pour la vidéo */
 }
 
-.gallery img {
-    max-width: 100%;
-    height: auto;
+/* Définit les styles pour la vidéo elle-même */
+.homepage-video iframe {
+    position: absolute; /* Position absolue pour la vidéo afin qu'elle puisse remplir le conteneur */
+    width: 100%; /* La vidéo occupe toute la largeur du conteneur */
+    height: 100%; /* La vidéo occupe toute la hauteur du conteneur */
 }
+
+/*-----------------------------*/
+
+/* Définit une marge automatique sur les côtés gauche et droit du conteneur .masonry,
+   ce qui permet de le centrer horizontalement sur la page. */
+   .masonry-container {
+    width: 100%;
+    margin: 0 auto;
+    border: 1px solid red; 
+  }
+  
+  /* Définit la largeur de chaque élément de la masonry à 400 pixels. */
+  .masonry-container-item {
+      width: 400px;
+      background-color: blue;
+  }
+  
+  /* Applique des styles aux images et aux iframes à l'intérieur des éléments .masonry-item.
+     Les images et les iframes auront une largeur de 100% pour s'adapter à la largeur de leur conteneur et un espace de 10 pixels en bas pour créer un espacement entre les éléments. */
+  .masonry-container-item img, .masonry-container-item iframe {
+      width: 100%;
+      background-color: yellow;
+      /* margin-bottom: 5px; */
+  }
+  
+
