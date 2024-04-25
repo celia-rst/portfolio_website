@@ -3,89 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Artistique</title>
+    <title>Portfolio Nisrine Oulalite</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <div class="logo">Logo</div>
-        <div class="menu">
-            <ul class="main-menu">
-                <li>
-                    <div class="filter-item">
-                        <button data-filter="*" class="filter-item active" type="buttom">Home</button>
-                    </div>
-                </li>
-                <li>
-                    <div class="filter-item">
-                        <button data-filter="*" class="filter-item active" type="buttom">Animation</button>
-                    </div>
-                </li>
-                <li>
-                    <div class="filter-item">
-                        <button data-filter="*" class="filter-item active" type="buttom">Illustration</button>
-                    </div>
-                </li>
-                <li>
-                    <a href="about.html">About</a>
-                </li>
-                <li>
-                    <a href="contact.html">Contact</a>
-                </li>
-            </ul>
-            <ul class="dropdown-menu">
-                <li>
-                    <div class="filter-item">
-                        <button data-filter="*" class="filter-item active" type="buttom">Home</button>
-                    </div>
-                </li>
-                <li>
-                    <div class="filter-item">
-                        <button data-filter="*" class="filter-item active" type="buttom">Animation</button>
-                    </div>
-                </li>
-                <li>
-                    <div class="filter-item">
-                        <button data-filter="*" class="filter-item active" type="buttom">Illustration</button>
-                    </div>
-                </li>
-                <li>
-                    <a href="about.html">About</a>
-                </li>
-                <li>
-                    <a href="contact.html">Contact</a>
-                </li>
-            </ul>
+        <div class="header-menu">
+            <div class="logo"><img src="logo.png" alt="logo"></div>
+            <div class="menu-section">
+                <ul>
+                    <li><button data-filter="*" class="filter-item" type="button">All</button></li>
+                    <li><button data-filter=".animation" class="filter-item" type="button">Animation</button></li>
+                    <li><button data-filter=".illustration" class="filter-item" type="button">Illustration</button></li>
+                    <li><a class="about" href="about.html">About</a></li>
+                    <li><a class="contact" href="contact.html">Contact</a></li>  
+                </ul>
             </div>
-            <div class="social-media">
-                <a href="#"><img class="icon" src="icons/instagram_icon.png" alt="Instagram"></a>
-                <a href="#"><img class="icon" src="icons/vimeo_icon.png" alt="Vimeo"></a>
-                <a href="#"><img class="icon" src="icons/linkedin_icon.png" alt="LinkedIn"></a>
-            </div>
+        </div>
+        <div class="dropdown-menu">
+            <p>dropdown-menu</p>
+        </div>
+        <div class="header-social-icon">
+            <a href="#"><img class="icon" src="icons/instagram_icon.png" alt="Instagram"></a>
+            <a href="#"><img class="icon" src="icons/vimeo_icon.png" alt="Vimeo"></a>
+            <a href="#"><img class="icon" src="icons/linkedin_icon.png" alt="LinkedIn"></a>
         </div>
     </header>
     <main>
-        <section id="home">
-            <div class="homepage-video-container">
-                <div class="homepage-video">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/vF8keYfncN4?si=Uh6b6T9OtIRFHWFX" title="Homepage Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </div>
+        <div class="homepage-video-container">
+            <div class="homepage-video">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/vF8keYfncN4?si=Uh6b6T9OtIRFHWFX" title="Homepage Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
-            <div class="masonry-container">
-                <div class="masonry-container-item"><iframe width="560" height="315" src="https://www.youtube.com/embed/aSy03qaL99U?si=Jvd3O_REqzM_3P9r" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-                <div class="masonry-container-item"><iframe width="560" height="315" src="https://www.youtube.com/embed/NIhc62oboQU?si=MXV1a79-foKpBupQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-                <div class="masonry-container-item"><img src="illustrations/illus1.jpg" alt="Illustrtation 1"></div>
-                <div class="masonry-container-item"><img src="illustrations/illus2.jpg" alt="Illustrtation 2"></div>
-                <div class="masonry-container-item"><img src="illustrations/illus3.jpg" alt="Illustrtation 3"></div>
-                <div class="masonry-container-item"><img src="illustrations/illus4.jpg" alt="Illustrtation 4"></div>
-                <div class="masonry-container-item"><img src="illustrations/illus5.jpg" alt="Illustrtation 5"></div>
-                <div class="masonry-container-item"><img src="illustrations/illus6.jpg" alt="Illustrtation 6"></div>
-                <div class="masonry-container-item"><img src="illustrations/illus7.jpg" alt="Illustrtation 7"></div>
-                <div class="masonry-container-item"><img src="illustrations/illus8.jpg" alt="Illustrtation 8"></div>
-            </div>
-        </section>
-            <script src="script.js"></script>
-            <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
+        </div>
+        <div class="masonry-container">
+            <div class="masonry-container-item animation"><iframe width="560" height="315" src="https://www.youtube.com/embed/aSy03qaL99U?si=Jvd3O_REqzM_3P9r" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+            <div class="masonry-container-item animation"><iframe width="560" height="315" src="https://www.youtube.com/embed/NIhc62oboQU?si=MXV1a79-foKpBupQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+            <div class="masonry-container-item illustration"><img src="illustrations/illus1.jpg" alt="Illustrtation 1"></div>
+            <div class="masonry-container-item illustration"><img src="illustrations/illus2.jpg" alt="Illustrtation 2"></div>
+            <div class="masonry-container-item illustration"><img src="illustrations/illus3.jpg" alt="Illustrtation 3"></div>
+            <div class="masonry-container-item illustration"><img src="illustrations/illus4.jpg" alt="Illustrtation 4"></div>
+            <div class="masonry-container-item illustration"><img src="illustrations/illus5.jpg" alt="Illustrtation 5"></div>
+            <div class="masonry-container-item illustration"><img src="illustrations/illus6.jpg" alt="Illustrtation 6"></div>
+            <div class="masonry-container-item illustration"><img src="illustrations/illus7.jpg" alt="Illustrtation 7"></div>
+            <div class="masonry-container-item illustration"><img src="illustrations/illus8.jpg" alt="Illustrtation 8"></div>
+        </div>
+        <script src="script.js"></script>
+        <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+        <!-- <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script> -->
     </main>
+    <footer>
+        <div class="footer-social-icons">
+            <a href="#"><img class="icon" src="icons/instagram_icon.png" alt="Instagram"></a>
+            <a href="#"><img class="icon" src="icons/vimeo_icon.png" alt="Vimeo"></a>
+            <a href="#"><img class="icon" src="icons/linkedin_icon.png" alt="LinkedIn"></a>
+        </div>
+        <p class="footer-copyright">
+            © 2024 All rights reserved, all content are protected by copyright.
+        </p>
+    </footer>
 </body>
 </html>

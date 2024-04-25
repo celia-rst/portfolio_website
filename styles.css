@@ -1,156 +1,208 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
+    margin: 0; /* enlève la marge car par défaut il y en a une */
     padding: 0;
+    background-color: #f2f2f2;
 }
+
+/*----------------------------------------------------------*/
+/* HEADER */
 
 header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-}
-
-.logo {
-    font-size: 50px;
-    color: #ffffff;
-    text-align: center;
-    margin-bottom: 10px;
+    position: fixed;
+    height: 120px;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #f2f2f2;
+    /* border: 2px solid red; */
 }
 
 /*-----------------------------*/
-/* Menu grand écran */
+/* Responsive menu (big screen) */
 
-.main-menu {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    text-align: center;
-  }
-  
-.main-menu li {
-    display: inline-block;
-    margin-right: 20px; /* Marge à droite pour l'espacement entre les éléments */
+.header-menu {
+    display: flex;
+    /* border: 1px solid red; */
+
+    .logo {
+        display: flex;
+        align-items: center;
+        color: #000000;
+        img {
+            width: 100%
+        }
+    }
+
+    .menu-section {
+        margin-left: auto;
+        /* border: 1px solid blue; */
+    
+        ul {
+            display: flex;
+            padding: 0;
+            margin: 0;
+            /* border: 1px solid greenyellow; */
+        }
+    
+        li {
+            list-style: none;
+            margin: 1vw;
+            /* border: 1px solid peru; */
+        }
+    
+        .filter-item,
+        .about,
+        .contact {
+            /* enlever le style de base */
+            text-decoration: none;
+            border: none;
+            background-color: transparent;
+        
+            /* autres */
+            font-size: 2vw;/* 30px; */
+            font-weight: bold;
+            color: #000000;
+            /* cursor: pointer; */
+            /* border: 1px solid black; */
+        }
+    
+        /* Style au survol */
+        .filter-item:hover {
+            color: #666;
+        }
+    }
 }
 
-.main-menu li:last-child {
-    margin-right: 0; /* Supprime la marge à droite du dernier élément */
-}
-
-/* Style commun pour les boutons et les liens */
-.main-menu li button,
-.main-menu li a {
-    text-decoration: none;
-    font-size: 24px;
-    font-weight: bold;
-    color: #ffffff;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-}
-  
-/* Style au survol */
-.main-menu li button:hover,
-.main-menu li a:hover {
-    color: #666;
-}
-
-.social-media {
-    display: flex; /* Utiliser Flexbox pour aligner les éléments */
-    justify-content: center; /* Aligner horizontalement au centre */
-    align-items: center; /* Aligner verticalement au centre */
-    margin-top: 10px;
+.header-social-icon {
+    display: flex; /* aligne les éléments */
+    justify-content: right; /* aligne horizontalement au centre */
     .icon {
         width: 20px;
         height: 20px;
         padding: 10px;
     }
+    /* border: 1px solid green; */
 }
 
+/* Responsive menu (small screen) */
 .dropdown-menu {
-    display: none; /* Masquer le menu déroulant par défaut */
+    display: none; /* masque le menu par défaut */
   }
 
-/*-----------------------------*/
-/* Menu responsive */
-
-@media screen and (max-width: 768px) {
-    .main-menu {
-      display: none; /* Masquer le menu principal */
+@media screen and (max-width: 800px) {
+    .menu-section {
+      display: none; /* masque le menu principal */
     }
+
+    .header-menu {
+        display: flex;
+        justify-content: center;
     
+        .logo {
+            color: #000000;
+            img {
+                width: 100%
+            }
+        }
+    }    
+
     .dropdown-menu {
-      display: block;
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      text-align: center;
-    }
-
-    .dropdown-menu li button,
-    .dropdown-menu li a {
-      text-decoration: none;
-      font-size: 24px;
-      font-weight: bold;
-      color: #ffffff;
-      background-color: transparent;
-      border: none;
-      cursor: pointer;
-    }
-
+        display: block;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+      }
+    
       /* Style au survol */
-    .dropdown-menu li button:hover,
-    .dropdown-menu li a:hover {
+    .dropdown-menu {
         color: #666;
     }
   }
 
-/*-----------------------------*/
+/*----------------------------------------------------------*/
+/* MAIN */
 
-/* Définit les styles pour le conteneur de la vidéo sur la page d'accueil */
-.homepage-video-container {
-    max-width: 1000px; /* La vidéo ne dépassera pas la largeur de son conteneur */
-    margin: 0 auto; /* Centre le conteneur horizontalement sur la page */
-    margin-top: 50px;
+main {
+    margin-top: 120px;
+    margin-bottom: 100px;
+    /* border: 1px solid blue; */
+}
+
+/*-----------------------------*/
+/* Homepage video */
+
+.homepage-video-container { 
+    /* max-width: 1000px; */
+    /* margin: 0 auto; */
+    /* margin-top: 50px; */
     margin-bottom: 50px;
 }
 
-/* Définit les styles pour le conteneur de la vidéo */
 .homepage-video {
-    position: relative; /* Position relative pour permettre le positionnement absolu de la vidéo */
-    overflow: hidden; /* Cache tout contenu dépassant les limites du conteneur */
-    height: 0; /* Initialise la hauteur à 0 pour calculer la hauteur du conteneur basée sur le ratio */
-    padding-bottom: 56.25%; /* Ratio hauteur/largeur de 16:9 pour la vidéo */
+    position: relative; /* permet au conteneur fils de se positionner dans ce conteneur */
+    overflow: hidden;
+    height: 0; /* initialise la hauteur à 0 pour calculer la hauteur du conteneur basée sur le ratio */
+    padding-bottom: 56.25%; /* ratio hauteur/largeur de 16:9 soit (9/16)*100% pour la vidéo */
 }
 
 /* Définit les styles pour la vidéo elle-même */
 .homepage-video iframe {
-    position: absolute; /* Position absolue pour la vidéo afin qu'elle puisse remplir le conteneur */
-    width: 100%; /* La vidéo occupe toute la largeur du conteneur */
-    height: 100%; /* La vidéo occupe toute la hauteur du conteneur */
+    position: absolute; /* la vidéo remplit tout le conteneur parent */
+    width: 100%; /* la vidéo occupe toute la largeur du conteneur */
+    height: 100%; /* la vidéo occupe toute la hauteur du conteneur */
 }
 
 /*-----------------------------*/
+/* Masonry Layout */
 
-/* Définit une marge automatique sur les côtés gauche et droit du conteneur .masonry,
-   ce qui permet de le centrer horizontalement sur la page. */
-   .masonry-container {
-    width: 100%;
-    margin: 0 auto;
-    border: 1px solid red; 
-  }
-  
-  /* Définit la largeur de chaque élément de la masonry à 400 pixels. */
-  .masonry-container-item {
-      width: 400px;
-      background-color: blue;
-  }
-  
-  /* Applique des styles aux images et aux iframes à l'intérieur des éléments .masonry-item.
-     Les images et les iframes auront une largeur de 100% pour s'adapter à la largeur de leur conteneur et un espace de 10 pixels en bas pour créer un espacement entre les éléments. */
-  .masonry-container-item img, .masonry-container-item iframe {
-      width: 100%;
-      background-color: yellow;
-      /* margin-bottom: 5px; */
-  }
-  
+.masonry-container {
+    margin: 0 auto; /* centre le contenur horizontalement sur la page */
+    font-size: 0; /* supprime l'espace entre les éléments en ligne */
+    /* border: 1px solid red; */
+}
 
+.masonry-container-item {
+    width: calc(100% / 3);
+    /* background-color: blue; */
+}
+
+.masonry-container-item img, .masonry-container-item iframe {
+    width: 100%; /* images et les iframes s'adaptent à la largeur de leur conteneur */
+    /* background-color: yellow; */
+}
+
+/* Pour les écrans jusqu'à 800px de largeur */
+@media only screen and (max-width: 800px) {
+    .masonry-container-item {
+        width: calc(100% / 2);
+        /* background-color: blue; */
+    }
+}
+
+/*-----------------------------*/
+/* FOOTER */
+
+footer {
+    background-color: #000000;
+    margin-top: 50px;
+    padding: 100px;
+}
+
+.footer-social-icons {
+    display: flex;
+    justify-content: center; /* aligne horizontalement au centre */
+    .icon {
+        width: 40px;
+        height: 40px;
+        padding: 10px;
+    }
+}
+
+.footer-copyright {
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: #ffffff;
+}
