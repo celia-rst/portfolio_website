@@ -55,6 +55,5 @@ window.onload = () => {
       menuLinks.classList.remove('close-menu');
     }
   });
-  
 }
 

@@ -10,6 +10,7 @@ body {
 
 header {
     position: fixed;
+    z-index: 10;
     height: 120px;
     top: 0;
     width: 100%;
@@ -89,10 +90,9 @@ header {
 /* Responsive menu */
 @media screen and (max-width: 800px) {
     header {
-        z-index: 1;
+        z-index: 10;
         display: flex;
         justify-content: center;
-        /* background-color: aqua; */
     }
     
     .header-menu {
@@ -100,6 +100,7 @@ header {
         flex-direction: column;
         align-items: center;
         justify-content: center;
+
         /* background-color: red; */
         
         .header-logo {
@@ -115,25 +116,21 @@ header {
     
     .header-dropdown-menu {
         display: flex; /* TODO: pourquoi ca marche pas qd on enlève? */
-        /* border: 1px solid green; */
-        
         .default-icon {
-            z-index: 1;
             margin-top: 10px;
             width: 50px;
-            /* border: 1px solid blue; */
         }
     }
 
     .header-menu-section.open-menu {
-        z-index: 1;
         opacity: 1;
+        visibility: visible;
         transition: 0.6s;
     }
 
     .header-menu-section.close-menu {
-        z-index: 1;
         opacity: 0;
+        visibility: visible;
         transition: 0.6s;
     }
 
@@ -147,7 +144,7 @@ header {
         background-color: rgba(0, 0, 0, 0.7);
         backdrop-filter: blur(7px);
         opacity: 0;
-        /* border: 1px solid green; */
+        visibility: hidden;
 
         ul {
             flex-direction: column;
@@ -184,8 +181,6 @@ header {
 main {
     margin-top: 120px;
     margin-bottom: 100px;
-    z-index: 1000;
-    background-color: aqua;
     /* border: 1px solid blue; */
 }
 
@@ -195,7 +190,6 @@ main {
 .homepage-video-container { 
     /* max-width: 1000px; */
     margin-bottom: 50px;
-    z-index: 1000;
 }
 
 .homepage-video {
