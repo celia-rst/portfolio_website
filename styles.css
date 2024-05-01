@@ -58,9 +58,7 @@ header {
             /* border: 1px solid orange; */
         }
 
-        .filter-item,
-        .about,
-        .contact {
+        li a {
             /* enlever le style de base */
             text-decoration: none;
             border: none;
@@ -70,13 +68,12 @@ header {
             font-size: 2vw;
             font-weight: bold;
             color: #000000;
+            cursor: pointer;
             /* border: 1px solid yellow; */
         }
     
         /* Style au survol */
-        .filter-item:hover,
-        .about:hover,
-        .contact:hover {
+        li a:hover {
             color: #666;
         }
     }
@@ -120,6 +117,7 @@ header {
             z-index: 1;
             margin-top: 10px;
             width: 50px;
+            cursor: pointer;
         }
     }
 
@@ -162,18 +160,24 @@ header {
             /* border: 1px solid blue; */
         }
 
-        .filter-item,
-        .about,
-        .contact {
+        li a {
             font-size: 6vw!important;
             color: #ffffff!important;
         }
     
         /* Style au survol */
-        .filter-item:hover,
-        .about:hover,
-        .contact:hover {
+        li a:hover {
             color: #aaaaaa!important;
+        }
+    }
+
+    .gallery-filter{
+        h1 {
+            font-size: 6vw!important;
+        }
+
+        .filter-item {
+            font-size: 5vw!important;
         }
     }
 }
@@ -191,22 +195,78 @@ main {
 /* Homepage video */
 
 .homepage-video-container { 
-    /* max-width: 1000px; */
-    margin-bottom: 50px;
+    /* width: 1000px; */
+    /* justify-content: center; */
+    /* border: 1px solid red; */
+    
+    .homepage-video {
+        position: relative;
+        /* height: 0; initialise la hauteur à 0 pour calculer la hauteur du conteneur basée sur le ratio */
+        padding-bottom: 56.25%; /* ratio hauteur/largeur de 16:9 soit (9/16)*100% pour la vidéo */
+        /* border: 1px solid blue; */
+
+        /* Définit les styles pour la vidéo elle-même */
+        iframe {
+            position: absolute; /* la vidéo remplit tout le conteneur parent */
+            width: 100%; /* la vidéo occupe toute la largeur du conteneur */
+            height: 100%; /* la vidéo occupe toute la hauteur du conteneur */
+        }
+    }
 }
 
-.homepage-video {
-    position: relative; /* permet au conteneur fils de se positionner dans ce conteneur */
-    overflow: hidden;
-    height: 0; /* initialise la hauteur à 0 pour calculer la hauteur du conteneur basée sur le ratio */
-    padding-bottom: 56.25%; /* ratio hauteur/largeur de 16:9 soit (9/16)*100% pour la vidéo */
-}
+/*-----------------------------*/
+/* Gallery filter */
 
-/* Définit les styles pour la vidéo elle-même */
-.homepage-video iframe {
-    position: absolute; /* la vidéo remplit tout le conteneur parent */
-    width: 100%; /* la vidéo occupe toute la largeur du conteneur */
-    height: 100%; /* la vidéo occupe toute la hauteur du conteneur */
+.gallery-filter{
+    padding-top: 50px;
+    padding-bottom: 25px;
+    /* border: 1px solid red; */
+
+    h1 {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        margin-bottom: 50px;
+        font-size: 50px;
+    }
+    
+    ul {
+        display: flex;
+        justify-content: center;
+        padding:  0;
+        margin: 0;
+        /* border: 1px solid green; */
+    }
+    
+    li {
+        display: flex;
+        margin-right: 50px;
+        /* border: 1px solid orange; */
+    }
+
+    li:last-child {
+        margin-right: 0;
+    }
+    
+    .filter-item {
+        /* enlever le style de base */
+        text-decoration: none;
+        border: none;
+        background-color: transparent;
+    
+        /* autres */
+        font-size: 40px;
+        font-weight: bold;
+        color: #000000;
+        cursor: pointer;
+    }
+    
+    /* Style au survol */
+    .filter-item:hover,
+    .about:hover,
+    .contact:hover {
+        color: #666;
+    }
 }
 
 /*-----------------------------*/
@@ -224,7 +284,11 @@ main {
 
 .masonry-container-item img, .masonry-container-item iframe {
     width: 100%; /* images et les iframes s'adaptent à la largeur de leur conteneur */
-    /* background-color: yellow; */
+    background-color: yellow;
+}
+
+.masonry-container-item iframe {
+    width: 100%;
 }
 
 /* Pour les écrans jusqu'à 800px de largeur */
@@ -234,6 +298,7 @@ main {
         /* background-color: blue; */
     }
 }
+
 /*-----------------------------*/
 /* Text overlay and image zoom on hover */
 

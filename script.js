@@ -31,9 +31,24 @@ window.onload = () => {
     });
   });
 
+  // play iframe video on hover
+  document.addEventListener("DOMContentLoaded", function() {
+    var videos = document.querySelectorAll('.video');
+    videos.forEach(function(video) {
+        video.addEventListener('mouseover', function(event) {
+            var currentSrc = video.getAttribute('src');
+            console.log(currentSrc);
+            video.setAttribute('src', currentSrc + '&autoplay=1');
+            event.preventDefault();
+        });
+    });
+});
+
+
   // menu responsive
   const menuBurger = document.querySelector(".default-icon");
   const menuLinks = document.querySelector(".header-menu-section");
+  const body = document.body;
 
   menuBurger.addEventListener('click', function() {
     // open menu
@@ -41,11 +56,13 @@ window.onload = () => {
       menuLinks.classList.add('open-menu');
       menuLinks.classList.remove('close-menu', false);
         this.src = 'icons/close-window.png';
+        body.style.overflow = 'hidden';
     // close menu
     } else {
       this.src = 'icons/burger-bar.png';
       menuLinks.classList.remove('open-menu');
       menuLinks.classList.add('close-menu');
+      body.style.overflow = 'auto';
     }
   });
 
