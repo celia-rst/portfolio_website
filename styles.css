@@ -16,7 +16,6 @@ header {
     width: 100%;
     background-color: #f2f2f2;
     /* border: 1px solid red; */
-    /* TODO menu pas resposive >>> quand en grand écran le menu depasse le header*/
 }
 
 /*-----------------------------*/
@@ -68,7 +67,6 @@ header {
             font-size: 2vw;
             font-weight: bold;
             color: #000000;
-            cursor: pointer;
             /* border: 1px solid yellow; */
         }
     
@@ -97,7 +95,6 @@ header {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-
         /* background-color: red; */
         
         .header-logo {
@@ -360,4 +357,116 @@ footer {
     font-family: Arial, sans-serif;
     text-align: center;
     color: #ffffff;
+}
+
+/*-----------------------------*/
+/* About page */
+
+.about-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    /* border: 1px solid red; */
+}
+
+.about-profile-picture {
+    width: 300px;
+    height: auto;
+    justify-content: center;
+    border-radius: 50%;
+    overflow: hidden;   
+    /* border: 1px solid red; */
+    
+    img {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.about-description {
+    width: 500px;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    /* border: 1px solid red; */
+
+    h1, p {
+        margin: 0;
+        /* border: 1px solid blue; */
+    }
+}
+
+.skills-container {
+    display: flex;
+    justify-content: center;
+    
+    .skills-description {
+        margin-right: 120px;
+        /* border: 1px solid red; */
+    }
+}
+
+@media screen and (max-width: 870px) {
+    .about-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+    }
+    
+    .about-profile-picture {
+        width: 300px;
+        height: auto;
+        justify-content: center;
+        border-radius: 50%;
+        overflow: hidden;
+        order: 2;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        /* border: 1px solid red; */
+        
+        img {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    
+    .about-description {
+        width: 80%;
+        display: flex;
+        gap: 20px;
+        flex-direction: column;
+        align-items: center;
+        order: 1;
+        /* border: 1px solid red; */
+    
+        h1, p {
+            margin: 0;
+        }
+    }
+    
+    .skills-container {
+        display: flex;
+        justify-content: center;
+
+        .skills-description {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 80%;
+            margin: 0;
+            gap: 20px;
+            /* border: 1px solid blue; */
+            
+            h3, p {
+                margin: 0;
+                /* border: 1px solid blue; */
+            }
+        }
+
+    }
 }

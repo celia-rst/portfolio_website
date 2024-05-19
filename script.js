@@ -44,7 +44,6 @@ window.onload = () => {
     });
 });
 
-
   // menu responsive
   const menuBurger = document.querySelector(".default-icon");
   const menuLinks = document.querySelector(".header-menu-section");
