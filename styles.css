@@ -217,52 +217,72 @@ main {
 .gallery-filter{
     padding-top: 50px;
     padding-bottom: 25px;
-    /* border: 1px solid red; */
-
-    h1 {
+    
+    .gallery-title {
         display: flex;
         justify-content: center;
-        margin: 0;
+        align-items: center;
         margin-bottom: 50px;
-        font-size: 50px;
+        
+        .bar + h1 {
+            margin: 0 20px;
+        }
+
+        h1 {
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            margin-bottom: 50px;
+            font-size: 50px;
+        }
+    
+        .bar {
+            width: 200px;
+            height: 2px;
+            background-color: black;
+        }
     }
     
-    ul {
+    .filter-item-container {
         display: flex;
         justify-content: center;
         padding:  0;
-        margin: 0;
+        margin: 0 0 50px;
         /* border: 1px solid green; */
-    }
+        
+        .filter-item {
+            /* enlever le style de base */
+            text-decoration: none;
+            border: none;
+            background-color: transparent;
+            /* border: 1px solid green; */
+        
+            /* autres */
+            font-size: 40px;
+            font-weight: bold;
+            color: #000000;
+            cursor: pointer;
+        }
     
-    li {
-        display: flex;
-        margin-right: 50px;
-        /* border: 1px solid orange; */
+        /* Style au survol */
+        .filter-item:hover {
+            color: #666;
+        }
     }
 
-    li:last-child {
-        margin-right: 0;
-    }
-    
-    .filter-item {
-        /* enlever le style de base */
-        text-decoration: none;
-        border: none;
-        background-color: transparent;
-    
-        /* autres */
-        font-size: 40px;
-        font-weight: bold;
-        color: #000000;
-        cursor: pointer;
-    }
-    
-    /* Style au survol */
-    .filter-item:hover,
-    .about:hover,
-    .contact:hover {
-        color: #666;
+    .dot-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        /* border: 1px solid green; */
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: black;
+        }
     }
 }
 
@@ -364,21 +384,31 @@ footer {
 /*-----------------------------*/
 /* Animation & Illustration gallery with navigation */
 
-.zoom-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 999;
-    visibility: hidden;
-    background-color: rgba(255, 255, 255, 0.9);
-    border: 2px solid #000;
-    pointer-events: none;
+#mainImage {
+    cursor: zoom-in; /* Affiche une main pour indiquer que l'image est cliquable */
+}
+/* Classe pour l'image zoomée */
+.zoomed-image {
+    position: absolute; /* Position absolue pour permettre le déplacement */
+    pointer-events: none; /* Désactive les événements de souris sur l'image */
+    z-index: 1000; /* Assure que l'image est au-dessus de tous les autres éléments */
+    transition: transform 0.1s ease; /* Transition douce pour le déplacement de l'image */
+    object-fit: contain;
 }
 
-.zoom-image {
-    width: 200px;
-    height: 200px;
-    object-fit: contain;
+/* Overlay pour l'effet de zoom */
+#zoomOverlay {
+    display: none; /* Caché par défaut */
+    position: fixed; /* Position fixe pour couvrir toute la fenêtre */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Couvre toute la largeur de la fenêtre */
+    height: 100vh; /* Couvre toute la hauteur de la fenêtre */
+    background: rgba(0, 0, 0, 0.7); /* Fond semi-transparent */
+    z-index: 1000; /* Assure que l'overlay est au-dessus de tous les autres éléments */
+    justify-content: center; /* Centre le contenu horizontalement */
+    align-items: center; /* Centre le contenu verticalement */
+    cursor: zoom-out;
 }
 
 .gallery-container {
@@ -401,13 +431,14 @@ footer {
     .main-image {
         display: flex;
         justify-content: center;
-        width: 50%;
+        width: 60%;
         height: 80vh;
         background: rgba(0, 0, 0, 0.1);
         /* border: 1px solid green; */
         
         img {
-            width: 100%;
+            width: 100%; 
+            /* TODO: il faut mettre ça pr la responsivité */
             object-fit: contain;
         }
     }
@@ -421,6 +452,7 @@ footer {
 
     .arrow {
         width: 100%;
+        background-color: #f2f2f2;
     }
 
     .nav-arrow {
@@ -453,7 +485,6 @@ footer {
     .thumbnail:hover, .thumbnail.active {
         border: 2px solid #000000;
     }
-
 }
 
 .gallery-description-container {

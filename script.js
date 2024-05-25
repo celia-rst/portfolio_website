@@ -121,51 +121,75 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /*-----------------------------*/
+/* Zoom image on gallery navigation window */
 
-const mainImage = document.getElementById('mainImage');
-const zoomContainer = document.createElement('div');
-zoomContainer.classList.add('zoom-container');
-const zoomImage = document.createElement('img');
-zoomImage.classList.add('zoom-image');
-zoomContainer.appendChild(zoomImage);
-document.body.appendChild(zoomContainer);
+document.addEventListener('DOMContentLoaded', () => {
+    const mainImage = document.getElementById('mainImage'); // Selects the main image
+    const zoomOverlay = document.getElementById('zoomOverlay'); // Selects the zoom overlay
+    let zoomedImage = null; // Variable to store the zoomed image
 
-mainImage.addEventListener('mousemove', function(e) {
-    const bounds = this.getBoundingClientRect();
-    const x = e.clientX - bounds.left;
-    const y = e.clientY - bounds.top;
-    const scaleFactor = 2; // Facteur de zoom
+    mainImage.addEventListener('click', () => {
+        if (!zoomedImage) {
+            // If no image is currently zoomed
+            zoomedImage = document.createElement('img');
+            zoomedImage.classList.add('zoomed-image');
+            zoomedImage.src = mainImage.src;
+            zoomOverlay.appendChild(zoomedImage); // Adds the zoomed image to the overlay
+            zoomOverlay.style.display = 'flex'; // Displays the overlay
 
-    const zoomWidth = mainImage.offsetWidth * scaleFactor;
-    const zoomHeight = mainImage.offsetHeight * scaleFactor;
-    const bgPosX = -x * scaleFactor + zoomWidth / 2;
-    const bgPosY = -y * scaleFactor + zoomHeight / 2;
+            adjustZoomedImage(zoomedImage);
 
-    let leftPos = e.pageX + 20; // Décalage de la loupe par rapport à la souris
-    let topPos = e.pageY + 20; // Décalage de la loupe par rapport à la souris
+            window.addEventListener('mousemove', onMouseMove); // Adds a mousemove event listener to the window
+            zoomOverlay.addEventListener('click', closeZoom);
+        } else {
+            closeZoom();
+        }
+    });
 
-    // Vérifier si la loupe dépasse le bord droit de l'écran
-    if (leftPos + zoomWidth > window.innerWidth) {
-        leftPos = window.innerWidth - zoomWidth;
+    function adjustZoomedImage(img) {
+        const mainImageWidth = mainImage.offsetWidth; // Width of the main image
+        const mainImageHeight = mainImage.offsetHeight; // Height of the main image
+
+        img.style.width = `${mainImageWidth * 2}px`; // Sets the width of the zoomed image to twice the width of the main image
+        img.style.height = `${mainImageHeight * 2}px`; // Sets the height of the zoomed image to twice the height of the main image
+        img.style.left = '50%';
+        img.style.top = '50%';
+        img.style.transform = 'translate(-50%, -50%)'; // Centers the image
     }
 
-    // Vérifier si la loupe dépasse le bord bas de l'écran
-    if (topPos + zoomHeight > window.innerHeight) {
-        topPos = window.innerHeight - zoomHeight;
+    function onMouseMove(e) {
+        // Checks if an image is currently zoomed
+        if (zoomedImage) {
+            // Retrieves the horizontal and vertical coordinates of the mouse position relative to the window
+            const mouseX = e.clientX;
+            const mouseY = e.clientY;
+            
+            // Retrieves the width and height of the browser window
+            const windowWidth = window.innerWidth;
+            const windowHeight = window.innerHeight;
+            
+            // Retrieves the width and height of the zoomed image
+            const imgWidth = zoomedImage.offsetWidth; // Uses offsetWidth to get the computed width with CSS modifications
+            const imgHeight = zoomedImage.offsetHeight; // Uses offsetHeight to get the computed height with CSS modifications
+    
+            // Calculates the offset needed for the movement of the zoomed image
+            const offsetX = ((mouseX - windowWidth / 2) / windowWidth) * (imgWidth - windowWidth);
+            const offsetY = ((mouseY - windowHeight / 2) / windowHeight) * (imgHeight - windowHeight);
+    
+            // Applies the CSS transformation to move the zoomed image according to the mouse movement
+            zoomedImage.style.transform = `translate(calc(-50% + ${-offsetX}px), calc(-50% + ${-offsetY}px))`;
+        }
     }
-
-    zoomContainer.style.left = `${leftPos}px`;
-    zoomContainer.style.top = `${topPos}px`;
-    zoomContainer.style.visibility = 'visible';
-
-    zoomImage.src = this.src;
-    zoomImage.style.width = `${zoomWidth}px`;
-    zoomImage.style.height = `${zoomHeight}px`;
-    zoomImage.style.objectPosition = `${bgPosX}px ${bgPosY}px`;
-});
-
-mainImage.addEventListener('mouseleave', function() {
-    zoomContainer.style.visibility = 'hidden';
+    
+    function closeZoom() {
+        if (zoomedImage) {
+            zoomedImage.remove();
+            zoomedImage = null;
+            zoomOverlay.style.display = 'none';
+            window.removeEventListener('mousemove', onMouseMove); // Removes the mousemove event listener from the window
+            zoomOverlay.removeEventListener('click', closeZoom);
+        }
+    }
 });
 
 /*-----------------------------*/
