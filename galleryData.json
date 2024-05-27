@@ -1,0 +1,60 @@
+[
+    {
+      "title": "Pierre & Tim",
+      "description": "This project is a small campaign for the cookie merchants Pierre et Tim. I collaborated with Emma Bibal. Together, we created a typography inspired by cookie dough, flyers, banners, and a promotional video highlighting the store. The tone is light and playful. The video was created using After Effects and Photoshop.",
+      "mainImage": "/animation/pierre et tim/vignette.jpg",
+      "thumbnails": [
+        "/animation/pierre et tim/vignette.jpg",
+        "/animation/pierre et tim/img1.jpg",
+        "/animation/pierre et tim/img2.jpg"
+      ],
+      "vimeoLink": "https://player.vimeo.com/video/842127781?h=2c412759c1&title=0&byline=0&portrait=0"
+    },
+    {
+      "title": "The Enchanted Forest",
+      "description": "",
+      "mainImage": "/animation/The Enchanted Forest/img1.png",
+      "thumbnails": [
+        "/animation/The Enchanted Forest/img1.png",
+        "/animation/The Enchanted Forest/img2.png"
+      ],
+      "vimeoLink": "https://player.vimeo.com/video/938292311?h=867e57f314&title=0&byline=0&portrait=0"
+    },
+    {
+        "title": "Insula Orchestra",
+        "description": "This visualizer was designed to accompany a composition by the Insula Orchestra. I animated in 2D using Procreate, then hand-colored my frames with ink. During compositing, I added a texture to give the impression of sketches coming to life.",
+        "mainImage": "/animation/Insula Orchestra/img1.jpg",
+        "thumbnails": [
+          "/animation/Insula Orchestra/img1.jpg",
+          "/animation/Insula Orchestra/img2.jpg"
+        ],
+        "vimeoLink": "https://player.vimeo.com/video/938298298?h=f0485a7fe8&title=0&byline=0&portrait=0"
+      },
+      {
+        "title": "The Hen",
+        "description": "",
+        "mainImage": "/illustration/The Hen/img1.jpg",
+        "thumbnails": [
+          "/illustration/The Hen/img1.jpg",
+          "/illustration/The Hen/img2.jpg",
+          "/illustration/The Hen/img3.jpg",
+          "/illustration/The Hen/img4.jpg",
+          "/illustration/The Hen/img5.jpg",
+          "/illustration/The Hen/img6.jpg",
+          "/illustration/The Hen/img7.jpg"
+        ]
+      },
+      {
+        "title": "Ephemeral",
+        "description": "Surfing in the heart of texture, the body becomes one with the sea.\n\n \"Ephemeral\" is a hand-painted animated film created during my time at Gobelins. It shows the intimate bond between the surfer and the ocean. Frame by frame, I animated and performed compositing work to accentuate the textures of the painting.",
+        "mainImage": "/animation/Ephemeral/img1.jpg",
+        "thumbnails": [
+            "/animation/Ephemeral/img1.jpg",
+            "/animation/Ephemeral/img2.png",
+            "/animation/Ephemeral/img3.jpg",
+            "/animation/Ephemeral/img4.png"
+        ],
+        "youtubeLink": "https://www.youtube.com/embed/vU1uf3i-Jr0?si=ESVxDM-47tYc5_Xm&amp;controls=0"
+      }
+]
+  
