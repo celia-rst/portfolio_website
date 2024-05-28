@@ -8,7 +8,7 @@
         "/animation/pierre et tim/img1.jpg",
         "/animation/pierre et tim/img2.jpg"
       ],
-      "vimeoLink": "https://player.vimeo.com/video/842127781?h=2c412759c1&title=0&byline=0&portrait=0"
+      "vimeoLink": "https://player.vimeo.com/video/842127781?h=2c412759c1"
     },
     {
       "title": "The Enchanted Forest",
@@ -18,7 +18,7 @@
         "/animation/The Enchanted Forest/img1.png",
         "/animation/The Enchanted Forest/img2.png"
       ],
-      "vimeoLink": "https://player.vimeo.com/video/938292311?h=867e57f314&title=0&byline=0&portrait=0"
+      "vimeoLink": "https://player.vimeo.com/video/938292311?h=867e57f314"
     },
     {
         "title": "Insula Orchestra",
@@ -28,7 +28,7 @@
           "/animation/Insula Orchestra/img1.jpg",
           "/animation/Insula Orchestra/img2.jpg"
         ],
-        "vimeoLink": "https://player.vimeo.com/video/938298298?h=f0485a7fe8&title=0&byline=0&portrait=0"
+        "vimeoLink": "https://player.vimeo.com/video/938298298?h=f0485a7fe8"
       },
       {
         "title": "The Hen",
@@ -55,6 +55,264 @@
             "/animation/Ephemeral/img4.png"
         ],
         "youtubeLink": "https://www.youtube.com/embed/vU1uf3i-Jr0?si=ESVxDM-47tYc5_Xm&amp;controls=0"
+      },
+      {
+        "title": "Fangs",
+        "description": "",
+        "mainImage": "/illustration/Fangs/img1.png",
+        "thumbnails": [
+            "/illustration/Fangs/img1.png",
+            "/illustration/Fangs/img2.png",
+            "/illustration/Fangs/img3.png",
+            "/illustration/Fangs/img4.png",
+            "/illustration/Fangs/img5.png",
+            "/illustration/Fangs/img6.png",
+            "/illustration/Fangs/img7.png"
+        ]
+      },
+      {
+        "title": "An Eye for an Eye",
+        "description": "A film created for my second year in animation cinema. Inspired from the myth of Artemis and the hunter, I designed unique characters and striking visuals. It's a blend of ink textures and 2D animation.",
+        "mainImage": "/animation/Aneyeforaneye/img1.jpg",
+        "thumbnails": [
+            "/animation/Aneyeforaneye/img1.jpg",
+            "/animation/Aneyeforaneye/img2.jpg",
+            "/animation/Aneyeforaneye/img3.jpg",
+            "/animation/Aneyeforaneye/img4.jpg",
+            "/animation/Aneyeforaneye/img5.jpg",
+            "/animation/Aneyeforaneye/img6.jpg",
+            "/animation/Aneyeforaneye/img7.jpg",
+            "/animation/Aneyeforaneye/img8.jpg"
+        ],
+        "vimeoLink": "https://player.vimeo.com/video/573583187?h=f38ebf0833"
+      },
+      {
+        "title": "Zinzin",
+        "description": "",
+        "mainImage": "animation/Zinzin/vignette.jpg",
+        "thumbnails": [
+            "animation/Zinzin/vignette.jpg"
+        ],
+        "vimeoLink": "https://player.vimeo.com/video/766241418?h=fc2773a652"
+      },
+      {
+        "title": "Brigadoon",
+        "description": "This opening sequence was conceived as an introduction for contemporary viewers to a vintage film.\n\n Hand-animated, the elements gradually appear on screen, echoing the film's synopsis of a village that appears and disappears every hundred years.\n\n The technique used is hand-painted animation, bringing poetry and dreamlike qualities to the sequence.",
+        "mainImage": "animation/Brigadoon/img1.jpg",
+        "thumbnails": [
+            "animation/Brigadoon/img1.jpg",
+            "animation/Brigadoon/img2.jpg"
+        ],
+        "youtubeLink": "https://www.youtube.com/embed/R_q4vsSvuK8?si=YH2Sef0tk6wItHAd"
+      },
+      {
+        "title": "Envol",
+        "description": "\"Envol\" is my final animation cinema project. It was created using 2D animation on TV Paint, with backgrounds designed in vector format using Illustrator. The aim of this film was to poetically evoke the concept of evolution through the metaphor of bird migration. My artistic objective for this project was to enhance the visuals with hand-made textures, adding them to a primarily digital base. Therefore, I worked on my images through compositing to achieve a unique visual outcome.",
+        "mainImage": "animation/envol/gif1.gif",
+        "thumbnails": [
+            "animation/envol/gif1.gif",
+            "animation/envol/img1.jpg",
+            "animation/envol/img2.jpg",
+            "animation/envol/img3.jpg"
+        ],
+        "vimeoLink": "https://player.vimeo.com/video/749735530?h=d09d250f78>"
+      },
+      {
+        "title": "Arabesque",
+        "description": "Creation of a poster in Illustrator and its animation in After Effects.",
+        "mainImage": "animation/Arabesque/img1.jpg",
+        "thumbnails": [
+          "animation/Arabesque/img1.jpg"
+        ],
+        "vimeoLink": "https://player.vimeo.com/video/677749370?h=81a35da9c2"
+      },
+      {
+        "title": "Masks",
+        "description": "",
+        "mainImage": "illustration/Masks/gif1.gif",
+        "thumbnails": [
+          "illustration/Masks/gif1.gif",
+          "illustration/Masks/img1.jpg",
+          "illustration/Masks/img2.jpg",
+          "illustration/Masks/img3.jpg",
+          "illustration/Masks/img4.jpg",
+          "illustration/Masks/img5.jpg",
+          "illustration/Masks/img6.jpg"
+        ]
+      },
+      {
+        "title": "JPO 2019",
+        "description": "This project was created during my first year in design school. I animated a poster made by classmates using After Effects.",
+        "mainImage": "animation/JPO/img1.jpg",
+        "thumbnails": [
+          "animation/JPO/img1.jpg",
+          "animation/JPO/img2.jpg",
+          "animation/JPO/img3.jpg",
+          "animation/JPO/img4.jpg"
+        ],
+        "vimeoLink": "https://player.vimeo.com/video/677749562?h=1da4fa507e"
+      },
+      {
+        "title": "The Cat",
+        "description": "\"The Cat\" is a very short stop-motion animation film made using paper cutouts during my intership at Camera-Etc.\n\n On a makeshift set, I animate each second of the film frame by frame, using paper puppets previously cut out and crafted.",
+        "mainImage": "animation/The Cat/img1.jpg",
+        "thumbnails": [
+          "animation/The Cat/img1.jpg",
+          "animation/The Cat/img2.jpg",
+          "animation/The Cat/img3.jpg",
+          "animation/The Cat/img4.jpg"
+        ],
+        "vimeoLink": "https://player.vimeo.com/video/610988970?h=5d6ad5766e"
+      },
+      {
+        "title": "A day at the park",
+        "description": "",
+        "mainImage": "illustration/A day at the park/img1.jpg",
+        "thumbnails": [
+          "illustration/A day at the park/img1.jpg",
+          "illustration/A day at the park/img2.jpg",
+          "illustration/A day at the park/img3.jpg",
+          "illustration/A day at the park/img4.jpg",
+          "illustration/A day at the park/img5.jpg",
+          "illustration/A day at the park/img6.jpg",
+          "illustration/A day at the park/img7.jpg"
+        ]
+      },
+      {
+        "title": "Ancient Concert",
+        "description": "It's a stop-motion film created during my animation cinema training, crafted and animated with Cliodhna Clune and Félice Ronzon.\n\n I created the deer-man puppet and participated in set construction.\n\n I animated my puppet during a week of shooting and completed the editing process with my colleagues.",
+        "mainImage": "animation/Ancient Concert/img1.jpg",
+        "thumbnails": [
+          "animation/Ancient Concert/img1.jpg",
+          "animation/Ancient Concert/img2.jpg",
+          "animation/Ancient Concert/img3.jpg",
+          "animation/Ancient Concert/img4.jpg",
+          "animation/Ancient Concert/img5.jpg",
+          "animation/Ancient Concert/img6.jpg",
+          "animation/Ancient Concert/img7.jpg"
+        ],
+        "vimeoLink": "https://player.vimeo.com/video/677748611?h=704000dee7"
+      },
+      {
+        "title": "Observation",
+        "description": "",
+        "mainImage": "illustration/Observation/img1.jpg",
+        "thumbnails": [
+          "illustration/Observation/img1.jpg",
+          "illustration/Observation/img2.jpg",
+          "illustration/Observation/img3.jpg",
+          "illustration/Observation/img4.jpg",
+          "illustration/Observation/img5.jpg",
+          "illustration/Observation/img6.jpg",
+          "illustration/Observation/img7.jpg",
+          "illustration/Observation/img8.jpg",
+          "illustration/Observation/img9.jpg",
+          "illustration/Observation/img10.jpg",
+          "illustration/Observation/img11.jpg",
+          "illustration/Observation/img12.jpg",
+          "illustration/Observation/img13.jpg",
+          "illustration/Observation/img14.jpg",
+          "illustration/Observation/img15.jpg",
+          "illustration/Observation/img16.jpg",
+          "illustration/Observation/img17.jpg",
+          "illustration/Observation/img18.jpg",
+          "illustration/Observation/img19.jpg",
+          "illustration/Observation/img20.jpg",
+          "illustration/Observation/img21.jpg",
+          "illustration/Observation/img22.jpg",
+          "illustration/Observation/img23.jpg",
+          "illustration/Observation/img24.jpg",
+          "illustration/Observation/img25.jpg"
+        ]
+      },
+      {
+        "title": "The Bleeding Blood",
+        "description": "Based on a comic I created in black and white, I had fun making a short film with a humorous tone. I worked on TV Paint.",
+        "mainImage": "animation/The bleeding blood/img1.jpg",
+        "thumbnails": [
+          "animation/The bleeding blood/img1.jpg",
+          "animation/The bleeding blood/img2.jpg",
+          "animation/The bleeding blood/img3.jpg",
+          "animation/The bleeding blood/img4.jpg",
+          "animation/The bleeding blood/img5.jpg"
+        ],
+        "vimeoLink": "https://player.vimeo.com/video/683682599?h=d6d4157d11"
+      },
+      {
+        "title": "Clitotem",
+        "description": "",
+        "mainImage": "illustration/Clitotem/img1.tif",
+        "thumbnails": [
+          "illustration/Clitotem/img1.jpg",
+          "illustration/Clitotem/img2.jpg",
+          "illustration/Clitotem/img3.jpg"
+        ]
+      },
+      {
+        "title": "Sketchbook",
+        "description": "",
+        "mainImage": "illustration/Sketchbook/img1.jpg",
+        "thumbnails": [
+          "illustration/Sketchbook/img1.jpg",
+          "illustration/Sketchbook/img2.jpg",
+          "illustration/Sketchbook/img3.jpg",
+          "illustration/Sketchbook/img4.jpg",
+          "illustration/Sketchbook/img5.jpg",
+          "illustration/Sketchbook/img6.jpg",
+          "illustration/Sketchbook/img7.jpg",
+          "illustration/Sketchbook/img8.jpg",
+          "illustration/Sketchbook/img9.jpg",
+          "illustration/Sketchbook/img10.jpg",
+          "illustration/Sketchbook/img11.jpg"
+        ]
+      },
+      {
+        "title": "Print",
+        "description": "",
+        "mainImage": "illustration/Print/img1.tif",
+        "thumbnails": [
+          "illustration/Print/img1.jpg",
+          "illustration/Print/img2.jpg",
+          "illustration/Print/img3.jpg",
+          "illustration/Print/img4.jpg",
+          "illustration/Print/img5.jpg"
+        ]
+      },
+      {
+        "title": "Flying",
+        "description": "Papercut animated gif.",
+        "mainImage": "animation/Flying/vignette.jpg",
+        "thumbnails": [
+          "animation/Flying/vignette.jpg"
+        ],
+        "vimeoLink": "https://player.vimeo.com/video/677749627?h=cb2dcaf765"
+      },
+      {
+        "title": "Plants",
+        "description": "Experimental animation, painted with ink.",
+        "mainImage": "animation/Plants/vignette.jpg",
+        "thumbnails": [
+          "animation/Plants/vignette.jpg"
+        ],
+        "vimeoLink": "https://player.vimeo.com/video/683683037?h=1367bc9f7b"
+      },
+      {
+        "title": "Rage",
+        "description": "Experimental animation. Frame by frame, animated with charcoal.",
+        "mainImage": "animation/Rage/vignette.jpg",
+        "thumbnails": [
+          "animation/Rage/vignette.jpg"
+        ],
+        "vimeoLink": "https://player.vimeo.com/video/677749491?h=d6372c92e4"
+      },
+      {
+        "title": "The Leap",
+        "description": "Inked animation.",
+        "mainImage": "animation/The leap/vignette.jpg",
+        "thumbnails": [
+          "animation/The leap/vignette.jpg"
+        ],
+        "vimeoLink": "https://player.vimeo.com/video/677749680?h=21411fd772"
       }
 ]
   

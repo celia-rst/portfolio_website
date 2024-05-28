@@ -38,7 +38,9 @@
                 </div>
                 <button class="nav-arrow" id="nextBtn"><img src="icons/next.png" class="arrow" alt="next"></button>
             </div>
-            <div class="thumbnail-container" id="thumbnailContainer"></div>
+            <div class="thumbnail-container">
+                <div class="thumbnails" id="thumbnails"></div>
+            </div>
         </div>
         <div id="zoomOverlay"></div>
     </main>
@@ -58,6 +60,156 @@
             © 2024 All rights reserved, all content are protected by copyright.
         </p>
     </footer>
+    <style>
+        /* Animation & Illustration gallery with navigation */
+
+        #mainImage {
+            cursor: zoom-in; /* Affiche une main pour indiquer que l'image est cliquable */
+        }
+        /* Classe pour l'image zoomée */
+        .zoomed-image {
+            position: absolute; /* Position absolue pour permettre le déplacement */
+            pointer-events: none; /* Désactive les événements de souris sur l'image */
+            z-index: 1000; /* Assure que l'image est au-dessus de tous les autres éléments */
+            transition: transform 0.1s ease; /* Transition douce pour le déplacement de l'image */
+            object-fit: contain;
+        }
+
+        /* Overlay pour l'effet de zoom */
+        #zoomOverlay {
+            display: none; /* Caché par défaut */
+            position: fixed; /* Position fixe pour couvrir toute la fenêtre */
+            top: 0;
+            left: 0;
+            width: 100vw; /* Couvre toute la largeur de la fenêtre */
+            height: 100vh; /* Couvre toute la hauteur de la fenêtre */
+            background: rgba(0, 0, 0, 0.7); /* Fond semi-transparent */
+            z-index: 1000; /* Assure que l'overlay est au-dessus de tous les autres éléments */
+            justify-content: center; /* Centre le contenu horizontalement */
+            align-items: center; /* Centre le contenu verticalement */
+            cursor: zoom-out;
+        }
+
+        .vimeo-container, .youtube-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            /* border: 1px solid red; */
+        }
+
+        .vimeo-container iframe, .youtube-container iframe {
+            width: 100%;
+            height: 400px;
+            background-color: black;
+        }
+
+        .gallery-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            /* border: 1px solid green; */
+
+            .main-image-container {
+                display: flex;
+                gap: 50px;
+                align-items: center;
+                justify-content: center;
+                
+                /* img, button {
+                    border: 1px solid red;
+                } */
+            }
+            
+            .main-image {
+                display: flex;
+                justify-content: center;
+                width: 60%;
+                height: 80vh;
+                background: rgba(0, 0, 0, 0.1);
+                /* border: 1px solid green; */
+                
+                img {
+                    width: 100%; 
+                    /* TODO: il faut mettre ça pr la responsivité */
+                    object-fit: contain;
+                }
+            }
+            
+            .nav-arrow {
+                border: none;
+                cursor: pointer;
+                padding: 0;
+                width: 40px;
+            }
+
+            .arrow {
+                width: 100%;
+                background-color: #f2f2f2;
+            }
+
+            .nav-arrow {
+                transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+            }
+            
+            .nav-arrow:hover {
+                opacity: 0.7; 
+                transform: scale(2.1);
+            }
+
+            .thumbnail-container {
+                display: flex;
+                justify-content: center;
+                /* border: 1px solid green; */
+            }
+
+            .thumbnails {
+                display: flex;
+                justify-content: start;
+                overflow-x: auto;
+                width: 500px;
+                white-space: nowrap;
+            }
+            
+            .thumbnail {
+                width: 100px;
+                height: 70px;
+                object-fit: cover;
+                cursor: pointer;
+                margin: 0 5px;
+                border: 2px solid transparent;
+                transition: border 0.5s;
+            }
+            
+            .thumbnail:hover, .thumbnail.active {
+                border: 2px solid #000000;
+            }
+        }
+
+        .gallery-description-container {
+            display: flex;
+            justify-content: center;
+            margin: 50px 0 50px 0;
+            /* border: 1px solid green; */
+            
+            .gallery-description {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 80%;
+
+                h2 {
+                    margin: 0 0 30px 0;
+                    /* border: 1px solid red; */
+                }
+
+                p {
+                    margin: 0;
+                    font-size: 18px;
+                }
+            }
+        }
+    </style>
     <script>
         // templating
         document.addEventListener('DOMContentLoaded', function() {
@@ -80,7 +232,7 @@
                             const vimeoContainer = document.createElement('div');
                             vimeoContainer.classList.add('vimeo-container');
                             
-                            vimeoContainer.innerHTML = `<iframe src="${project.vimeoLink}" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>`;
+                            vimeoContainer.innerHTML = `<iframe src="${project.vimeoLink}&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>`;
                             document.querySelector('main').insertBefore(vimeoContainer, document.querySelector('.gallery-description-container'));
                         }
 
@@ -93,16 +245,23 @@
                             document.querySelector('main').insertBefore(youtubeContainer, document.querySelector('.gallery-description-container'));
                         }
                         
-                        const thumbnailContainer = document.getElementById('thumbnailContainer');
-                        thumbnailContainer.innerHTML = '';
+                        const thumbnails = document.getElementById('thumbnails');
+                        thumbnails.innerHTML = '';
                         project.thumbnails.forEach((thumbnail, index) => {
                             const img = document.createElement('img');
                             img.src = thumbnail;
                             img.classList.add('thumbnail');
                             img.dataset.index = index;
                             img.alt = `Thumbnail ${index + 1}`;
-                            thumbnailContainer.appendChild(img);
+                            thumbnails.appendChild(img);
                         });
+
+                        // Adjust justify-content based on the number of thumbnails
+                        if (project.thumbnails.length <= 5) {
+                            thumbnails.style.justifyContent = 'center';
+                        } else {
+                            thumbnails.style.justifyContent = 'start';
+                        }
 
                         /*-----------------------------*/
                         /* Animation & Illustration gallery with navigation arrows and thumbnail strip for quick navigation */
@@ -110,7 +269,7 @@
                         // Select the main image element
                         const mainImage = document.getElementById('mainImage');
                         // Select all thumbnail images
-                        const thumbnails = document.querySelectorAll('.thumbnail');
+                        const thumbnailElements = document.querySelectorAll('.thumbnail');
                         // Select the previous button
                         const prevBtn = document.getElementById('prevBtn');
                         // Select the next button
@@ -119,22 +278,22 @@
                         let currentIndex = 0;
 
                         // Set the first thumbnail as active when the page loads
-                        thumbnails[0].classList.add('active');
+                        thumbnailElements[0].classList.add('active');
 
                         // Function to update the main image based on the index passed as an argument
                         function updateMainImage(index) {
                             // Update the source of the main image with that of the corresponding thumbnail
-                            mainImage.src = thumbnails[index].src;
+                            mainImage.src = thumbnailElements[index].src;
                             // Remove the 'active' class from the previous thumbnail
                             document.querySelector('.thumbnail.active').classList.remove('active');
                             // Add the 'active' class to the currently displayed thumbnail
-                            thumbnails[index].classList.add('active');
+                            thumbnailElements[index].classList.add('active');
                             // Update the index of the currently displayed image
                             currentIndex = index;
                         }
 
                         // Add event handler to each thumbnail
-                        thumbnails.forEach((thumbnail, index) => {
+                        thumbnailElements.forEach((thumbnail, index) => {
                             // When a thumbnail is clicked, call the updateMainImage function with the index of that thumbnail
                             thumbnail.addEventListener('click', () => {
                                 updateMainImage(index);
@@ -153,7 +312,7 @@
                         // Event handler for the 'next' button
                         nextBtn.addEventListener('click', () => {
                             // Check if the current index is less than the length of thumbnails minus 1 to avoid exceeding the end
-                            if (currentIndex < thumbnails.length - 1) {
+                            if (currentIndex < thumbnailElements.length - 1) {
                                 // Call the updateMainImage function with the incremented index to display the next image
                                 updateMainImage(currentIndex + 1);
                             }
