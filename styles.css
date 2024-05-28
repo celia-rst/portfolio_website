@@ -718,7 +718,6 @@ footer {
 
         h2 {
             margin: 0 0 30px 0;
-            /* border: 1px solid red; */
         }
 
         p {
@@ -726,4 +725,22 @@ footer {
             font-size: 18px;
         }
     }
+}
+
+.return-home {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    /* border: 1px solid red; */
+
+    a {
+        font-size: 18px;
+        font-weight: bold;
+        text-decoration: none;
+        color: #000000;
+    }
+}
+
+.return-home a:hover {
+    color: #666;
 }
