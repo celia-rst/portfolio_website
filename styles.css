@@ -385,3 +385,345 @@ footer {
     color: #ffffff;
 }
 
+/*-----------------------------*/
+/* About page */
+   
+.about-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    /* border: 1px solid red; */
+}
+
+.about-profile-picture {
+    width: 300px;
+    height: auto;
+    justify-content: center;
+    border-radius: 50%;
+    overflow: hidden;   
+    /* border: 1px solid red; */
+    
+    img {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.about-description {
+    width: 500px;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    /* border: 1px solid red; */
+
+    p {
+        margin: 0;
+        /* border: 1px solid blue; */
+    }
+}
+
+.skills-container {
+    display: flex;
+    justify-content: center;
+    
+    .skills-description {
+        display: flex;
+        flex-direction: column;
+        margin-top: 50px;
+        margin-right: 120px;
+        gap: 40px;
+        /* border: 1px solid red; */
+
+        h3 {
+            margin: 0;
+        }
+
+        p {
+            margin-bottom: 0;
+        }
+    }
+}
+
+@media screen and (max-width: 870px) {
+    .about-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+    }
+    
+    .about-profile-picture {
+        order: 2;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    .about-description {
+        width: 80%;
+        align-items: center;
+        order: 1;
+    }
+    
+    .skills-container {
+
+        .skills-description {
+            align-items: center;
+            width: 80%;
+            margin: 0;
+        }
+
+        .row {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+}
+
+/*-----------------------------*/
+/* Contact page */
+
+.form-container {
+    display: flex;
+    justify-content: center;
+
+    .title-container {
+        margin-bottom: 30px;
+        /* border: 1px solid red; */
+    }
+    
+    .row {
+        display: flex;
+        gap: 50px;
+        margin-bottom: 30px;
+        /* border: 1px solid red; */
+    }
+
+    /* .form {
+        border: 1px solid red;
+    } */
+
+    .form-control:focus {
+        border-bottom: 1px solid #000;
+        outline: none;
+        transition: border-bottom 0.8s ease;
+    }
+
+    .form-control {
+        font-family: 'Arial', sans-serif;
+        font-size: 16px;
+        width: 300px;
+        height: 50px;
+        border: none;
+        border-bottom: 1px solid #d9d9d9;
+        background-color: #f2f2f2;
+        /* border: 1px solid blue; */
+    }
+
+    .message-container {
+        width: 100%;
+        /* border: 1px solid green; */
+    }
+
+    textarea.form-control {
+        width: 100%;
+        min-height: 100px;
+        max-height: 300px;
+        resize: vertical;
+        box-sizing: border-box; /* équivalent de margin: 0; + padding: 0; */
+        /* border: 1px solid red; */
+    }
+
+    .submit {
+        font-family: 'Arial', sans-serif;
+        font-size: 16px;
+        padding: 10px;
+        color: #fff;
+        background-color: #1a1a1a;
+        border: none;
+    }
+    
+    .submit:hover {
+        background-color: #000000;
+    }
+
+    .error {
+        margin-top: 10px;
+        display: none;
+    }
+    
+    .error.active {
+        display: flex;
+    }
+
+    label.error {
+        font-size: 12px;
+        color: #000000;
+    }
+}
+
+@media screen and (max-width: 800px) {
+
+    .form-container {
+        .title-container {
+            display: flex;
+            justify-content: center;
+        }
+    
+        .row {
+            flex-direction: column;
+            gap: 30px!important;
+        }
+    }
+}
+
+/*-----------------------------*/
+/* Gallery page*/
+
+#mainImage {
+    cursor: zoom-in; /* Affiche une main pour indiquer que l'image est cliquable */
+}
+/* Classe pour l'image zoomée */
+.zoomed-image {
+    position: absolute; /* Position absolue pour permettre le déplacement */
+    pointer-events: none; /* Désactive les événements de souris sur l'image */
+    z-index: 1000; /* Assure que l'image est au-dessus de tous les autres éléments */
+    transition: transform 0.1s ease; /* Transition douce pour le déplacement de l'image */
+    object-fit: contain;
+}
+
+/* Overlay pour l'effet de zoom */
+#zoomOverlay {
+    display: none; /* Caché par défaut */
+    position: fixed; /* Position fixe pour couvrir toute la fenêtre */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Couvre toute la largeur de la fenêtre */
+    height: 100vh; /* Couvre toute la hauteur de la fenêtre */
+    background: rgba(0, 0, 0, 0.7); /* Fond semi-transparent */
+    z-index: 1000; /* Assure que l'overlay est au-dessus de tous les autres éléments */
+    justify-content: center; /* Centre le contenu horizontalement */
+    align-items: center; /* Centre le contenu verticalement */
+    cursor: zoom-out;
+}
+
+.vimeo-container, .youtube-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    /* border: 1px solid red; */
+}
+
+.vimeo-container iframe, .youtube-container iframe {
+    width: 100%;
+    height: 400px;
+    background-color: black;
+}
+
+.gallery-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    /* border: 1px solid green; */
+
+    .main-image-container {
+        display: flex;
+        gap: 50px;
+        align-items: center;
+        justify-content: center;
+        
+        /* img, button {
+            border: 1px solid red;
+        } */
+    }
+    
+    .main-image {
+        display: flex;
+        justify-content: center;
+        width: 60%;
+        height: 80vh;
+        background: rgba(0, 0, 0, 0.1);
+        /* border: 1px solid green; */
+        
+        img {
+            width: 100%; 
+            /* TODO: il faut mettre ça pr la responsivité */
+            object-fit: contain;
+        }
+    }
+    
+    .nav-arrow {
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        width: 40px;
+    }
+
+    .arrow {
+        width: 100%;
+        background-color: #f2f2f2;
+    }
+
+    .nav-arrow {
+        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    }
+    
+    .nav-arrow:hover {
+        opacity: 0.7; 
+        transform: scale(2.1);
+    }
+
+    .thumbnail-container {
+        display: flex;
+        justify-content: center;
+        /* border: 1px solid green; */
+    }
+
+    .thumbnails {
+        display: flex;
+        justify-content: start;
+        overflow-x: auto;
+        width: 500px;
+        white-space: nowrap;
+    }
+    
+    .thumbnail {
+        width: 100px;
+        height: 70px;
+        object-fit: cover;
+        cursor: pointer;
+        margin: 0 5px;
+        border: 2px solid transparent;
+        transition: border 0.5s;
+    }
+    
+    .thumbnail:hover, .thumbnail.active {
+        border: 2px solid #000000;
+    }
+}
+
+.gallery-description-container {
+    display: flex;
+    justify-content: center;
+    margin: 50px 0 50px 0;
+    /* border: 1px solid green; */
+    
+    .gallery-description {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 80%;
+
+        h2 {
+            margin: 0 0 30px 0;
+            /* border: 1px solid red; */
+        }
+
+        p {
+            margin: 0;
+            font-size: 18px;
+        }
+    }
+}
