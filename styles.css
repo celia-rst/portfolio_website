@@ -208,9 +208,9 @@ main {
 /*-----------------------------*/
 /* Gallery filter */
 
-.gallery-filter{
-    padding-top: 100px;
-    padding-bottom: 25px;
+.gallery-filter {
+    padding-top: 10vw;
+    padding-bottom: 2.5vw;
     /* border: 1px solid green; */
 }
 
@@ -218,11 +218,11 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 50px;
+    margin-bottom: 5vw;
     /* border: 1px solid green; */
 }
 
-.gallery-filter .gallery-title h1 + .bar {
+.gallery-filter .gallery-title h1, .gallery-filter .gallery-title .bar {
     margin: 0 20px;
 }
 
@@ -230,8 +230,9 @@ main {
     display: flex;
     justify-content: center;
     margin: 0;
-    margin-bottom: 50px;
+    /* margin-bottom: 50px; */
     font-size: 4vw;
+    /* border: 1px solid green; */
 }
 
 .gallery-filter .gallery-title .bar {
