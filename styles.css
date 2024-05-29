@@ -167,16 +167,6 @@ header {
             color: #aaaaaa!important;
         }
     }
-
-    .gallery-filter{
-        h1 {
-            font-size: 6vw!important;
-        }
-
-        .filter-item {
-            font-size: 5vw!important;
-        }
-    }
 }
 
 /*----------------------------------------------------------*/
@@ -217,12 +207,14 @@ main {
 .gallery-filter{
     padding-top: 100px;
     padding-bottom: 25px;
+    /* border: 1px solid green; */
     
     .gallery-title {
         display: flex;
         justify-content: center;
         align-items: center;
         margin-bottom: 50px;
+        /* border: 1px solid green; */
         
         .bar + h1 {
             margin: 0 20px;
@@ -233,11 +225,11 @@ main {
             justify-content: center;
             margin: 0;
             margin-bottom: 50px;
-            font-size: 50px;
+            font-size: 4vw;
         }
     
         .bar {
-            width: 200px;
+            width: 20vw;
             height: 2px;
             background-color: black;
         }
@@ -247,6 +239,7 @@ main {
         display: flex;
         justify-content: center;
         padding:  0;
+        /* padding-left: 11vw; */
         margin: 0 0 50px;
         /* border: 1px solid green; */
         
@@ -258,7 +251,7 @@ main {
             /* border: 1px solid green; */
         
             /* autres */
-            font-size: 40px;
+            font-size: 3vw;
             font-weight: bold;
             color: #000000;
             cursor: pointer;
@@ -274,12 +267,12 @@ main {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 50px;
+        width: 4vw;
         /* border: 1px solid green; */
 
         .dot {
-            width: 10px;
-            height: 10px;
+            width: 0.8vw;
+            height: 0.8vw;
             border-radius: 50%;
             background-color: black;
         }
