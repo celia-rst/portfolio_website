@@ -44,11 +44,11 @@ menuBurger.addEventListener('click', function() {
   if (this.src.includes('burger-bar.png')) {
     menuLinks.classList.add('open-menu');
     menuLinks.classList.remove('close-menu', false);
-      this.src = '/icons/close-window.png';
+      this.src = '/images/icons/close-window.png';
       body.style.overflow = 'hidden';
   // close menu
   } else {
-    this.src = '/icons/burger-bar.png';
+    this.src = '/images/icons/burger-bar.png';
     menuLinks.classList.remove('open-menu');
     menuLinks.classList.add('close-menu');
     body.style.overflow = 'auto';
@@ -242,137 +242,4 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         })
         .catch(error => console.error('Error loading gallery data:', error));
-});
-
-/*-----------------------------*/
-/* Contact form error messages and validation */
-
-const textarea = document.getElementById('message');
-const errorLabel = document.getElementById('too-long-message-error');
-const maxChars = 500;
-const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-
-// display in real-time an error message when the text is too long
-textarea.addEventListener('input', () => {
-    if (textarea.value.length > maxChars) {
-        errorLabel.classList.add('active');
-    } else {
-        errorLabel.classList.remove('active');
-    }
-});
-
-// display errors if the fields are empty or not valid, remove them in real-time when valid
-document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('contactForm');
-    const fname = document.getElementById('fname');
-    const lname = document.getElementById('lname');
-    const email = document.getElementById('email');
-    const message = document.getElementById('message');
-    const fnameError = document.getElementById('fname-error');
-    const lnameError = document.getElementById('lname-error');
-    const emailError = document.getElementById('email-error');
-    const messageError = document.getElementById('message-error');
-    const tooLongMessageError = document.getElementById('too-long-message-error');
-
-    const maxChars = 500; // Maximum characters for the message
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Pattern for validating email
-
-    form.addEventListener('submit', function(event) {
-        event.preventDefault();
-        if (validateFields()) {
-            sendEmail(fname.value, lname.value, email.value, message.value);
-        }
-    });
-
-  function validateFields() {
-      let valid = true;
-
-      // Reset all error messages
-      fnameError.classList.remove('active');
-      lnameError.classList.remove('active');
-      emailError.classList.remove('active');
-      messageError.classList.remove('active');
-      tooLongMessageError.classList.remove('active');
-
-      // Validate first name
-      if (fname.value.trim() === '') {
-          fnameError.classList.add('active');
-          valid = false;
-      }
-
-      // Validate last name
-      if (lname.value.trim() === '') {
-          lnameError.classList.add('active');
-          valid = false;
-      }
-
-      // Validate email
-      if (!emailPattern.test(email.value.trim())) {
-          emailError.classList.add('active');
-          valid = false;
-      }
-
-      // Validate message
-      if (message.value.trim() === '') {
-          messageError.classList.add('active');
-          valid = false;
-      } else if (message.value.length > maxChars) {
-          tooLongMessageError.classList.add('active');
-          valid = false;
-      }
-
-      return valid;
-  }
-
-  function sendEmail(fname, lname, email, message) {
-    const fullMessage = `
-    Name: ${fname} ${lname}
-    Email: ${email}
-    Message: ${message}
-    `;
-
-    Email.send({
-    SecureToken : "9630ca37-463d-4474-9aca-5660686ec0fc",
-    To: 'celia.restes@gmail.com',
-    From: "celia.restes@gmail.com",
-    Subject: "[Contact]",
-    Body: fullMessage
-
-    }).then(
-        message => {
-            alert("Message sent successfully");
-            window.location.href = 'confirmation.html';
-        }
-    ).catch(
-        message => {
-        alert('Something went wrong')
-        }
-    );
-  }
-
-  // Reset errors if valid
-    fname.addEventListener('input', function() {
-        if (fname.value.trim() !== '') {
-            fnameError.classList.remove('active');
-        }
-    });
-
-    lname.addEventListener('input', function() {
-        if (lname.value.trim() !== '') {
-            lnameError.classList.remove('active');
-      }
-    });
-
-    email.addEventListener('input', function() {
-        if (emailPattern.test(email.value.trim())) {
-            emailError.classList.remove('active');
-        }
-    });
-
-    message.addEventListener('input', function() {
-        if (message.value.trim() !== '' && message.value.length <= maxChars) {
-            messageError.classList.remove('active');
-            tooLongMessageError.classList.remove('active');
-        }
-    });
 });
