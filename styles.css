@@ -150,7 +150,6 @@ main {
     justify-content: center;
     margin: 0;
     font-size: 6vw;
-    /* border: 1px solid green; */
 }
 .gallery-filter .gallery-title .bar {
     width: 20vw;
@@ -160,7 +159,6 @@ main {
 .gallery-filter .filter-item-container {
     display: flex;
     justify-content: center;
-    /* border: 1px solid green; */
 }
 .gallery-filter .filter-item-container .filter-item {
     text-decoration: none;
