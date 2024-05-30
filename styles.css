@@ -229,7 +229,7 @@ main {
     display: flex;
     justify-content: center;
     margin: 0;
-    font-size: 6vw;
+    font-size: 3vw;
     /* border: 1px solid green; */
 }
 
@@ -253,7 +253,7 @@ main {
     /* border: 1px solid green; */
 
     /* autres */
-    font-size: 4vw;
+    font-size: 2vw;
     font-weight: bold;
     color: #000000;
     cursor: pointer;
@@ -273,8 +273,8 @@ main {
 }
 
 .gallery-filter .dot-container .dot {
-    width: 0.8vw;
-    height: 0.8vw;
+    width: 0.5vw;
+    height: 0.5vw;
     border-radius: 50%;
     background-color: black;
 }
@@ -407,8 +407,9 @@ footer {
 .about-description {
     width: 500px;
     display: flex;
-    gap: 20px;
+    justify-content: center;
     flex-direction: column;
+    gap: 20px;
     /* border: 1px solid red; */
 }
 
@@ -468,100 +469,6 @@ footer {
         display: flex;
         flex-direction: column;
         align-items: center;
-    }
-}
-
-/*-----------------------------*/
-/* Contact page */
-
-.form-container {
-    display: flex;
-    justify-content: center;
-}
-
-.form-container .title-container {
-    margin-bottom: 30px;
-    /* border: 1px solid red; */
-}
-
-.form-container .row {
-    display: flex;
-    gap: 50px;
-    margin-bottom: 30px;
-    /* border: 1px solid red; */
-}
-
-/* .form-container .form {
-    border: 1px solid red;
-} */
-
-.form-container .form-control:focus {
-    border-bottom: 1px solid #000;
-    outline: none;
-    transition: border-bottom 0.8s ease;
-}
-
-.form-container .form-control {
-    font-family: 'Arial', sans-serif;
-    font-size: 16px;
-    width: 300px;
-    height: 50px;
-    border: none;
-    border-bottom: 1px solid #d9d9d9;
-    background-color: #f2f2f2;
-    /* border: 1px solid blue; */
-}
-
-.form-container .message-container {
-    width: 100%;
-    /* border: 1px solid green; */
-}
-
-.form-container textarea.form-control {
-    width: 100%;
-    min-height: 100px;
-    max-height: 300px;
-    resize: vertical;
-    box-sizing: border-box; /* équivalent de margin: 0; + padding: 0; */
-    /* border: 1px solid red; */
-}
-
-.form-container .submit {
-    font-family: 'Arial', sans-serif;
-    font-size: 16px;
-    padding: 10px;
-    color: #fff;
-    background-color: #1a1a1a;
-    border: none;
-}
-
-.form-container .submit:hover {
-    background-color: #000000;
-}
-
-.form-container .error {
-    margin-top: 10px;
-    display: none;
-}
-
-.form-container .error.active {
-    display: flex;
-}
-
-.form-container label.error {
-    font-size: 12px;
-    color: #000000;
-}
-
-@media screen and (max-width: 800px) {
-    .form-container .title-container {
-        display: flex;
-        justify-content: center;
-    }
-
-    .form-container .row {
-        flex-direction: column;
-        gap: 30px!important;
     }
 }
 

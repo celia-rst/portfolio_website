@@ -240,6 +240,18 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 }
             }
+            const description = document.getElementById('projectDescription');
+            const title = document.getElementById('projectTitle');
+            const container = document.getElementById('descriptionContainer');
+        
+            if (!description || description.innerText.trim() === '') {
+                title.style.margin = '0';
+                container.style.margin = '50px 0 30px 0';
+            } else {
+                title.style.margin = '0 0 30px 0';
+                container.style.margin = '50px 0 50px 0';
+            }
         })
         .catch(error => console.error('Error loading gallery data:', error));
+    
 });
