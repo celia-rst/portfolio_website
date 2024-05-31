@@ -6,49 +6,36 @@ window.onload = () => {
         columnWidth: '.masonry-container-item',
         resize: true 
     }
-    };
-
-    const itemsGrid = new Isotope(items, isotopeOptions);
-    //console.log(itemsGrid);
-
-    // Add an event handler to all .filter-item elements
-    document.querySelectorAll('.filter-item').forEach(button => {
+};
+const itemsGrid = new Isotope(items, isotopeOptions);
+document.querySelectorAll('.filter-item').forEach(button => {
     button.addEventListener('click', function(event) {
-        // Retrieve filter value from the data-filter attribute of the clicked button
         var filterValue = this.dataset.filter;
-        // console.log('Filter value:', filterValue);
-
-        // Apply the filter using the Isotope object
         itemsGrid.arrange({ filter: filterValue });
-        // console.log('Arranging items with filter:', filterValue);
-        // console.log(itemsGrid);
-
-        // Retrieve filtered elements
         const filteredItems = itemsGrid.filteredItems.map(item => item.element);
-        // console.log('Filtered items:', filteredItems);
     });
-    });
+});
 }
 const menuBurger = document.querySelector(".default-icon");
 const menuLinks = document.querySelector(".header-menu-section");
 const body = document.body;
 menuBurger.addEventListener('click', function() {
-  if (this.src.includes('burger-bar.png')) {
-    menuLinks.classList.add('open-menu');
-    menuLinks.classList.remove('close-menu', false);
-      this.src = '/images/icons/close-window.png';
-      body.style.overflow = 'hidden';
-  } else {
-    this.src = '/images/icons/burger-bar.png';
-    menuLinks.classList.remove('open-menu');
-    menuLinks.classList.add('close-menu');
-    body.style.overflow = 'auto';
-  }
+    if (this.src.includes('burger-bar.png')) {
+        menuLinks.classList.add('open-menu');
+        menuLinks.classList.remove('close-menu', false);
+        this.src = '/images/icons/close-window.png';
+        body.style.overflow = 'hidden';
+    } else {
+        this.src = '/images/icons/burger-bar.png';
+        menuLinks.classList.remove('open-menu');
+        menuLinks.classList.add('close-menu');
+        body.style.overflow = 'auto';
+    }
 });
 menuLinks.addEventListener('transitionend', function(event) {
-  if (event.propertyName === 'opacity') {
-    menuLinks.classList.remove('close-menu');
-  }
+    if (event.propertyName === 'opacity') {
+        menuLinks.classList.remove('close-menu');
+    }
 });
 document.addEventListener('DOMContentLoaded', function() {
     fetch('galleryData.json')
@@ -166,7 +153,6 @@ document.addEventListener('DOMContentLoaded', function() {
             const description = document.getElementById('projectDescription');
             const title = document.getElementById('projectTitle');
             const container = document.getElementById('descriptionContainer');
-        
             if (!description || description.innerText.trim() === '') {
                 title.style.margin = '0';
                 container.style.margin = '50px 0 30px 0';
@@ -176,5 +162,4 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         })
         .catch(error => console.error('Error loading gallery data:', error));
-    
 });
