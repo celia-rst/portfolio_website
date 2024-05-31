@@ -69,12 +69,14 @@ header {
     font-size: 2vw;
     font-weight: bold;
     color: #000000;
+    transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
     /* border: 1px solid yellow; */
 }
 
 /* Style au survol */
 .header-menu .header-menu-section li a:hover {
     color: #666;
+    transform: scale(1.2);
 }
 
 /* Default Dropdown menu */
@@ -538,8 +540,8 @@ footer {
     display: flex;
     justify-content: center;
     width: 60%;
-    height: 80vh;
-    background: rgba(0, 0, 0, 0.1);
+    height: 60vh;
+    background: rgba(0, 0, 0, 0.04);
     /* border: 1px solid green; */
 }
 

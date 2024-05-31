@@ -1,35 +1,35 @@
 /* Isotope & Mansonry */
 window.onload = () => {
-  const items = document.querySelector('.masonry-container');
+    const items = document.querySelector('.masonry-container');
 
-  var isotopeOptions = {
+    var isotopeOptions = {
     itemSelector: '.masonry-container-item',
     masonry: {
-      columnWidth: '.masonry-container-item',
-      resize: true // enables dynamic resizing
+        columnWidth: '.masonry-container-item',
+        resize: true // enables dynamic resizing
     }
-  };
+    };
 
-  const itemsGrid = new Isotope(items, isotopeOptions);
-  console.log(itemsGrid);
+    const itemsGrid = new Isotope(items, isotopeOptions);
+    //console.log(itemsGrid);
 
-  // Add an event handler to all .filter-item elements
-  document.querySelectorAll('.filter-item').forEach(button => {
+    // Add an event handler to all .filter-item elements
+    document.querySelectorAll('.filter-item').forEach(button => {
     button.addEventListener('click', function(event) {
-      // Retrieve filter value from the data-filter attribute of the clicked button
-      var filterValue = this.dataset.filter;
-      // console.log('Filter value:', filterValue);
+        // Retrieve filter value from the data-filter attribute of the clicked button
+        var filterValue = this.dataset.filter;
+        // console.log('Filter value:', filterValue);
 
-      // Apply the filter using the Isotope object
-      itemsGrid.arrange({ filter: filterValue });
-      // console.log('Arranging items with filter:', filterValue);
-      // console.log(itemsGrid);
+        // Apply the filter using the Isotope object
+        itemsGrid.arrange({ filter: filterValue });
+        // console.log('Arranging items with filter:', filterValue);
+        // console.log(itemsGrid);
 
-      // Retrieve filtered elements
-      const filteredItems = itemsGrid.filteredItems.map(item => item.element);
-      // console.log('Filtered items:', filteredItems);
+        // Retrieve filtered elements
+        const filteredItems = itemsGrid.filteredItems.map(item => item.element);
+        // console.log('Filtered items:', filteredItems);
     });
-  });
+    });
 }
 
 /*-----------------------------*/
