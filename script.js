@@ -1,21 +1,33 @@
 window.onload = () => {
-  const items = document.querySelector('.masonry-container');
-  var isotopeOptions = {
+    const items = document.querySelector('.masonry-container');
+    var isotopeOptions = {
     itemSelector: '.masonry-container-item',
     masonry: {
-      columnWidth: '.masonry-container-item',
-      resize: true 
+        columnWidth: '.masonry-container-item',
+        resize: true 
     }
-  };
-  const itemsGrid = new Isotope(items, isotopeOptions);
-  console.log(itemsGrid);
-  document.querySelectorAll('.filter-item').forEach(button => {
+    };
+
+    const itemsGrid = new Isotope(items, isotopeOptions);
+    //console.log(itemsGrid);
+
+    // Add an event handler to all .filter-item elements
+    document.querySelectorAll('.filter-item').forEach(button => {
     button.addEventListener('click', function(event) {
-      var filterValue = this.dataset.filter;
-      itemsGrid.arrange({ filter: filterValue });
-      const filteredItems = itemsGrid.filteredItems.map(item => item.element);
+        // Retrieve filter value from the data-filter attribute of the clicked button
+        var filterValue = this.dataset.filter;
+        // console.log('Filter value:', filterValue);
+
+        // Apply the filter using the Isotope object
+        itemsGrid.arrange({ filter: filterValue });
+        // console.log('Arranging items with filter:', filterValue);
+        // console.log(itemsGrid);
+
+        // Retrieve filtered elements
+        const filteredItems = itemsGrid.filteredItems.map(item => item.element);
+        // console.log('Filtered items:', filteredItems);
     });
-  });
+    });
 }
 const menuBurger = document.querySelector(".default-icon");
 const menuLinks = document.querySelector(".header-menu-section");
