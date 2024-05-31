@@ -55,7 +55,7 @@ header {
 .header-menu .header-menu-section li {
     display: flex;
     list-style: none;
-    margin: 1.5vw;
+    margin: 0 1.5vw;
     /* border: 1px solid orange; */
 }
 
@@ -473,10 +473,6 @@ footer {
         align-items: center;
     }
 }
-
-/*-----------------------------*/
-/* Gallery page*/
-
 #mainImage {
     cursor: zoom-in; /* Affiche une main pour indiquer que l'image est cliquable */
 }
