@@ -36,11 +36,7 @@ header {
 .header-menu .header-menu-section li {
     display: flex;
     list-style: none;
-<<<<<<< HEAD
-    margin: 0 1.5vw;
-=======
     margin: 0 20px 20px;
->>>>>>> 525e2ed (section margin updated)
 }
 .header-menu .header-menu-section li a {
     text-decoration: none;
